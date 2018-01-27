@@ -6,7 +6,7 @@ La presente es una libreria para la validacion del numero, fecha de vencimiento,
 
 _This is a library for the validation of the number, expiration date, verification code (cvv) and full name corresponding to the credit card that makes use of the **Luhn** algorithm._
 
-[![NPM Version][npm-image]][npm-url] [![Dependency Status][david-image]][david-url] [![devDependency Status][david-dev-image]][david-dev-url]
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coverage-image]][coverage-url] [![NPM version][npm-image]][npm-url] [![npm downloads](https://img.shields.io/npm/dm/havunen.svg)](https://www.npmjs.org/package/havunen)
 
 ## Download
 
