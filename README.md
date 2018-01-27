@@ -50,7 +50,7 @@ _Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-parad
 
 * [npmjs: ](https://www.npmjs.com/package/card-validator)Acerca de `card validator`.  
 
-About **card validator**.
+_About_ **card validator**.
 
 >Learn more: [Youtube NPM Tutorial](https://www.youtube.com/watch?v=4aNA8ZHihFE);
 
