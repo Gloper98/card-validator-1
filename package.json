@@ -1,0 +1,25 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "Card-validator es una librería que se encrga de la validación de tarjetas de crédito.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danielalab/card-validator.git"
+  },
+  "keywords": [
+    "npm",
+    "validation",
+    "card",
+    "library"
+  ],
+  "author": "Daniela Gonzales y Anny Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danielalab/card-validator/issues"
+  },
+  "homepage": "https://github.com/Danielalab/card-validator#readme"
+}
