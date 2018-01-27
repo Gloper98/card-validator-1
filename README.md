@@ -2,7 +2,8 @@
 ![Card-Validator](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/decoder1.gif "cipher and decipher")
 >Producto Final: Library to Card Validation.
 
-La presente es una libreria para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).
+La presente es una libreria para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).  
+
 _This is a library for the validation of the number, expiration date, verification code (cvv) and full name corresponding to the credit card that makes use of the algorithm of **Luhn**._
 
 ## Download
@@ -27,11 +28,13 @@ meteor add momentjs:moment  # meteor
 ## Tools used
 
 * **[Bootstrap:](http://getbootstrap.com/docs/3.3/)** 
-_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._
+_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._  
+
 Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
 
 * **[jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** 
-_Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._
+_Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._  
+
 Javascript es un lenguaje de programación de alto nivel, dinámico, débilmente tipado, basado en prototipos, multi-paradigma e interpretado.
 ```javascript
  for(var i =0;i< firstStep.length;i++){
