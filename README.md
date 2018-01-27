@@ -23,24 +23,21 @@ Install-Package Moment.js   # NuGet
 spm install moment --save   # spm
 meteor add momentjs:moment  # meteor
 ```
-
-## 
-
 ## Herramientas usadas
 
 * **[CSS3:](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** Usada para dar los estilos basicos.
 
 ```diff
-Card-validator->css>main.css
+Card-validator->src>css>main.css
 ```
 
 * **[HTML:](https://www.w3schools.com/html/html_elements.asp)** Usada para la estructura de la pagina.
 
 ```diff
-Card-validatorr->index.html
+Card-validatorr->src>index.html
 ```
 
-* **[Javascript](https://www.javascript.com/), [jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** Usada para darle funcionalidad a la pagina.
+* **[jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** Usada para darle funcionalidad a la pagina.
 ```javascript
  for(var i =0;i< firstStep.length;i++){
 				if(firstStep[i]*0 !== 0){
@@ -55,11 +52,13 @@ Card-validatorr->index.html
 
 ## Related Topics
 
-* [Medium Blog:](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)Acerca de `let`, `const`y `var`.
-* [MDN web docs:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) Acerca de `arrow functions`.
-* [MDN web docs:](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode) Acerca de `fromCharCode()`.
-* [MDN web docs:](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt) Acerca de `charCodeAt()`.
-* [Definicion.de:](http://conceptodefinicion.de/ascii/) Acerca de `ASCCI code`.
+* [npmjs:](https://www.npmjs.com/package/card-validator)Acerca de `card validator`.
 
->Learn more: [Youtube Tutorial](https://www.youtube.com/watch?v=QVWsTy4ZPJI);
+>Learn more: [Youtube NPM Tutorial](https://www.youtube.com/watch?v=4aNA8ZHihFE);
+
+## Creditos
+
+* **Anny Gutierrez Lopez:** [GitHub Account](https://github.com/Gloper98).
+* **Daniela Gomez Bejar:** [GitHub Account](https://github.com/Danielalab).
+
 
