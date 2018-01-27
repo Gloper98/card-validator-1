@@ -28,10 +28,12 @@ meteor add momentjs:moment  # meteor
 ## Tools used
 
 * **[Bootstrap:](http://getbootstrap.com/docs/3.3/)** 
-_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._  Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
+Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
+_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._  
 
 * **[jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** 
-_Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._  Javascript es un lenguaje de programación de alto nivel, dinámico, débilmente tipado, basado en prototipos, multi-paradigma e interpretado.
+Javascript es un lenguaje de programación de alto nivel, dinámico, débilmente tipado, basado en prototipos, multi-paradigma e interpretado.
+_Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._  
 ```javascript
  for(var i =0;i< firstStep.length;i++){
 				if(firstStep[i]*0 !== 0){
@@ -46,8 +48,10 @@ _Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-parad
 
 ## Related Topics
 
-* [npmjs: ](https://www.npmjs.com/package/card-validator)Acerca de `card validator`.
+* [npmjs: ](https://www.npmjs.com/package/card-validator)Acerca de `card validator`.  
+
 About **card validator**.
+
 >Learn more: [Youtube NPM Tutorial](https://www.youtube.com/watch?v=4aNA8ZHihFE);
 
 ## Credits
