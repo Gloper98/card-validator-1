@@ -25,8 +25,8 @@ meteor add momentjs:moment  # meteor
 ```
 ## Herramientas usadas
 
-* **[Bootstrap](http://getbootstrap.com/docs/3.3/)** 
-*Bootstrap is a free and open-source front-end web framework for designing websites and web applications. *
+* **[Bootstrap:](http://getbootstrap.com/docs/3.3/)** 
+_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._
 Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
 
 * **[jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** Usada para darle funcionalidad a la pagina.
