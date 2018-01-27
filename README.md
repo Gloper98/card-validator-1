@@ -4,7 +4,7 @@
 
 La presente es una libreria para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).  
 
-_This is a library for the validation of the number, expiration date, verification code (cvv) and full name corresponding to the credit card that makes use of the algorithm of **Luhn**._
+_This is a library for the validation of the number, expiration date, verification code (cvv) and full name corresponding to the credit card that makes use of the **Luhn** algorithm._
 
 ## Download
 
