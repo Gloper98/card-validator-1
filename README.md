@@ -28,12 +28,12 @@ meteor add momentjs:moment  # meteor
 ## Tools used
 
 * **[Bootstrap:](http://getbootstrap.com/docs/3.3/)** 
-Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
-_Bootstrap is a free and open-source front-end web framework for designing websites and web applications._  
+  Bootstrap es un framework web front-end gratuito y de código abierto para diseñar sitios web y aplicaciones web.
+  _Bootstrap is a free and open-source front-end web framework for designing websites and web applications._  
 
 * **[jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** 
-Javascript es un lenguaje de programación de alto nivel, dinámico, débilmente tipado, basado en prototipos, multi-paradigma e interpretado.
-_Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._  
+  Javascript es un lenguaje de programación de alto nivel, dinámico, débilmente tipado, basado en prototipos, multi-paradigma e interpretado.
+  _Javascript is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language._  
 ```javascript
  for(var i =0;i< firstStep.length;i++){
 				if(firstStep[i]*0 !== 0){
