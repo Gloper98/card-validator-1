@@ -1,56 +1,65 @@
-# Valida datos de tarjetas de crédito
+# ![icon-document](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/icon-document.png "document") Card Validator
+![Card-Validator](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/decoder1.gif "cipher and decipher")
+>Producto Final: Library to Card Validation.
 
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
+La presente es una libreria para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).
 
-***
+## Download
 
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
-
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
-
-## Ejemplo
-
-```html
-<form>
-  <div class="form-group">
-    <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
-  </div>
-  <div class="form-group">
-    <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
-    <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
-  </div>
-  <input type="submit" value="Pagar" />
-</form>
+```diff
+npm install moment --save   # npm
+yarn add moment             # Yarn
+Install-Package Moment.js   # NuGet
+spm install moment --save   # spm
+meteor add momentjs:moment  # meteor
 ```
 
-```js
-const form = document.querySelector('form');
+## Install
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
+```diff
+npm install moment --save   # npm
+yarn add moment             # Yarn
+Install-Package Moment.js   # NuGet
+spm install moment --save   # spm
+meteor add momentjs:moment  # meteor
 ```
 
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.
+## 
+
+## Herramientas usadas
+
+* **[CSS3:](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** Usada para dar los estilos basicos.
+
+```diff
+Card-validator->css>main.css
+```
+
+* **[HTML:](https://www.w3schools.com/html/html_elements.asp)** Usada para la estructura de la pagina.
+
+```diff
+Card-validatorr->index.html
+```
+
+* **[Javascript](https://www.javascript.com/), [jQuery](https://jquery.com/)** y **[ECMA script 6:](http://es6-features.org/#Constants)** Usada para darle funcionalidad a la pagina.
+```javascript
+ for(var i =0;i< firstStep.length;i++){
+				if(firstStep[i]*0 !== 0){
+					if(firstStep.charCodeAt(i) >= 97 && firstStep.charCodeAt(i) <= 122){
+					  let ascciCode =firstStep.charCodeAt(i);
+					  let newAscciCode = (ascciCode-97+33)%26+97;
+						let encodedString =String.fromCharCode(newAscciCode);
+						newString.push(encodedString);
+						console.log(ascciCode);
+				  }
+```
+
+## Related Topics
+
+* [Medium Blog:](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)Acerca de `let`, `const`y `var`.
+* [MDN web docs:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) Acerca de `arrow functions`.
+* [MDN web docs:](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode) Acerca de `fromCharCode()`.
+* [MDN web docs:](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt) Acerca de `charCodeAt()`.
+* [Definicion.de:](http://conceptodefinicion.de/ascii/) Acerca de `ASCCI code`.
+
+>Learn more: [Youtube Tutorial](https://www.youtube.com/watch?v=QVWsTy4ZPJI);
+
