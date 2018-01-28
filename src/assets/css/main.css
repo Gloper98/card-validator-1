@@ -8,13 +8,27 @@ a {
 	text-decoration: none;
 	color: #fff;
 }
+a:hover {
+	text-decoration: none;
+	color:#fff;
+}
+ul {
+	list-style: none;
+	padding-left: none;
+	margin-left: none;
+	padding: 0;
+	height: 3em;
+}
+nav {
+	height: 5em;
+}
 .nav-logo {
-	width: 100px;
+	width: 60px;
 	height: auto;
 	display: inline-block;
 }
 .principal-title {
-	font-size: 20px;
+	font-size: 16px;
 	color: #fff;
 	font-weight: 600;
 }
@@ -25,16 +39,15 @@ a {
 	display: inline-block;
 	outline: 1px solid #000;
 }
-.left-nav {
-	float: left;
-}
 .right-nav {
 	float: right;
 	margin-top: 2.3em;
+	padding: 0;
+	height: auto;
 }
 .aboutUs {
-	font-size: 40px;
 	color: #3C4559;
+	margin-right: 4.5em;
 }
 .options {
 	font-size: 30px;
@@ -50,4 +63,17 @@ a {
 }
 .title-hero {
 	font-size: 63px;
+}
+.buttons {
+	outline: 1px solid blue;
+	padding-top: 2em;
+}
+.cardOne {
+	outline: 1px solid black;
+}
+.anielBtn {
+  padding: 0.7em 4em;
+}
+.buttons-c {
+	margin: 2em 3em;
 }
