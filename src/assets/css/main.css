@@ -21,6 +21,10 @@ ul {
 }
 nav {
 	height: 5em;
+	width: 100%;
+}
+header {
+	width: 100%;
 }
 .nav-logo {
 	width: 60px;
@@ -77,3 +81,12 @@ nav {
 .buttons-c {
 	margin: 2em 3em;
 }
+footer {
+	background-color: #4D4D4D;
+	color: #fff;
+}
+.footer-info {
+	margin: 2em 2em;
+}
+/*=====================================*/
+
