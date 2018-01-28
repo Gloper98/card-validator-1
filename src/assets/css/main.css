@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto';
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+.nav-logo {
+	width: 100px;
+	height: auto;
+	display: inline-block;
+}
+.principal-title {
+	font-size: 20px;
+	color: #fff;
+	font-weight: 600;
+}
+.nav-row {
+	background-color: #DD4142;
+}
+.inline-b {
+	display: inline-block;
+	outline: 1px solid #000;
+}
+.left-nav {
+	float: left;
+}
+.right-nav {
+	float: right;
+}
+.options {
+	font-size: 25px;
+	margin-right: 2em;
+}
+.hero-image {
+	width: 400px;
+	height: auto;
+}
+.hero-row {
+  background-color: #FFDD00;
+}
+.title-hero {
+	font-size: 63px;
+}
