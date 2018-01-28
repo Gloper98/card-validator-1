@@ -30,9 +30,14 @@ a {
 }
 .right-nav {
 	float: right;
+	margin-top: 2.3em;
+}
+.aboutUs {
+	font-size: 40px;
+	color: #3C4559;
 }
 .options {
-	font-size: 25px;
+	font-size: 30px;
 	margin-right: 2em;
 }
 .hero-image {
@@ -41,6 +46,7 @@ a {
 }
 .hero-row {
   background-color: #FFDD00;
+	padding-bottom: 1em;
 }
 .title-hero {
 	font-size: 63px;
