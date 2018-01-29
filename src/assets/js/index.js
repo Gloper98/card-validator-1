@@ -56,10 +56,35 @@ onload = (() => {
 			alert('El numero ' +  realN + ' no es valido')
 		}
 	}
-	var testingFunction = (e) => {
+	
+	let expirationDate = (inputDate) => {
+		let months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+		let actualDate = new Date();
+		let day = actualDate.getDate();
+		let month = months[actualDate.getUTCMonth()];
+		let year = actualDate.getFullYear();
+		console.log(inputDate)
+	}
+	
+	let testingFunction = (e) => {
 		const numberIn = numberVal.value;
 		const cvvNumber = verificationVal.value;
+		const inputDate = dateVal.value;
 		test1(numberIn, cvvNumber);
+		expirationDate(inputDate);
 	}
 	
 	testBtn.addEventListener('click', testingFunction);
