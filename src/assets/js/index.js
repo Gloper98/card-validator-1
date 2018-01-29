@@ -10,45 +10,58 @@ onload = (() => {
 	let dinerClub = /^3(?:0[0-5]|[68][0-9])[0-9]{4,}$/;
 	let discover = /^6(?:011|5[0-9]{2})[0-9]{3,}$/;
 	let jcb = /^(?:2131|1800|35[0-9]{3})[0-9]{3,}$/;
+	const isLetter = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 	
 	let test1 = (numberIn, cvvNumber) => {
 		var realN = numberIn.replace(/\s/g,'');
 		var realCVV = cvvNumber.replace(/\s/g,'');
 		if(visa.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 3){
+			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es visa');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else if(masterCard.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 3){
+			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es mastercard');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else if(amex.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 4){
+			if((realCVV.length === 4) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es American Express');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else if(dinerClub.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 3){
+			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es Dinner Club');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else if(discover.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 3){
+			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es Discover');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else if(jcb.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
-			if(realCVV.length === 3){
+			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
 				verificationVal.className = 'form-control form-control-lg success';
 				alert('El numero ' + realN + ' es JCB');
+			} else {
+				verificationVal.className = 'form-control form-control-lg error';
 			}
 		}else {
 			numberVal.className ='form-control form-control-lg error';
