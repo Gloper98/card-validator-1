@@ -5,16 +5,21 @@ onload = (() => {
 	let dateVal = document.getElementById('date');
 	let testBtn = document.getElementById('test');
 	let visa = /^4[0-9]{6,}$/;
-    let masterCard = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/;
+  let masterCard = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/;
 	let amex = /^3[47][0-9]{5,}$/;
 	let dinerClub = /^3(?:0[0-5]|[68][0-9])[0-9]{4,}$/;
 	let discover = /^6(?:011|5[0-9]{2})[0-9]{3,}$/;
 	let jcb = /^(?:2131|1800|35[0-9]{3})[0-9]{3,}$/;
 	const isLetter = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 	
+	//Validar que el nombre exista || este correctamente escrito======Validar si el numero esta registrado
+	//Validar que el numero sea valido || validar de que empresa es ===== Validar si el numero esta registrado
+	//Validar que la tarjeta no este vencida => Validar que el mes ingresado no haya acabado => comprobar si es el ultimo dia del mes.
+	//validar el numero de verificacion => validar el numer => validar el tipo de tarjeta => ver si el numero corresponde al tipo de tarjeta. ==== verificar si tiene numero de verificacion
+	
 	let test1 = (numberIn, cvvNumber) => {
-		var realN = numberIn.replace(/\s/g,'');
-		var realCVV = cvvNumber.replace(/\s/g,'');
+		let realN = numberIn.replace(/\s/g,'');
+		let realCVV = cvvNumber.replace(/\s/g,'');
 		if(visa.test(realN)){
 			numberVal.className ='form-control form-control-lg success';
 			if((realCVV.length === 3) && !(isLetter.test(realCVV))){
@@ -70,6 +75,10 @@ onload = (() => {
 		}
 	}
 	
+	var date = new Date();
+var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+	
 	let expirationDate = (inputDate) => {
 		let months = [
       '01',
@@ -89,8 +98,19 @@ onload = (() => {
 		let day = actualDate.getDate();
 		let month = months[actualDate.getUTCMonth()];
 		let year = actualDate.getFullYear();
+		
 		let fullDate = year+month+day;
+		let monthDay = year+month;
+		
 		let actualDateJoin = inputDate.split('-').join('');
+		console.log(inputDate);
+		
+		let lastDay = new Date(year,actualDate.getMonth() + 1,0);
+		let dayL = lastDay.getDate();
+		
+		console.log(dayL);
+		console.log(lastDay);
+		
 		if(actualDateJoin >= fullDate){
 			dateVal.className ='form-control form-control-lg success';
 		} else {

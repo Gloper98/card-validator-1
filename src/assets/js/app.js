@@ -28,7 +28,10 @@ let isValidCardNumber = (cardNumber) => {
     sum % 10 === 0 ? sentinelCardNumber = true : sentinelCardNumber = false;
   } else
     sentinelCardNumber = false;
+	return sentinelCardNumber;
 };
+
+console.log(isValidCardNumber('4544766226348242'));
 
 let isValidName = (name) => {
   if (regExpText.test(name) && name.length === 12) 
