@@ -11,28 +11,29 @@ onload = (() => {
 	let discover = /^6(?:011|5[0-9]{2})[0-9]{3,}$/;
 	let jcb = /^(?:2131|1800|35[0-9]{3})[0-9]{3,}$/;
 	
-	let test1 = (numberIn) => {
-		if(visa.test(numberIn)){
-			alert('El numero ' + numberIn + ' es visa');
-		}else if(masterCard.test(numberIn)){
-			alert('El numero ' + numberIn + ' es mastercard');
-		}else if(amex.test(numberIn)){
-			alert('El numero ' + numberIn + ' es American Express');
-		}else if(amex.test(numberIn)){
-			alert('El numero ' + numberIn + ' es American Express');
-		}else if(dinerClub.test(numberIn)){
-			alert('El numero ' + numberIn + ' es Dinner Club');
-		}else if(discover.test(numberIn)){
-			alert('El numero ' + numberIn + ' es Discover');
-		}else if(jcb.test(numberIn)){
-			alert('El numero ' + numberIn + ' es JCB');
+	let test1 = (numberIn, cvvNumber) => {
+		var realN = numberIn.replace(/\s/g,'');
+		var realCVV = cvvNumber.replace(/\s/g,'');
+		if(visa.test(realN) && realCVV.length === 3){
+			alert('El numero ' + realN + ' es visa');
+		}else if(masterCard.test(realN) && (realCVV.length === 3)){
+			alert('El numero ' + realN + ' es mastercard');
+		}else if(amex.test(realN) && realCVV.length === 4){
+			alert('El numero ' + realN + ' es American Express');
+		}else if(dinerClub.test(realN) && realCVV.length === 3){
+			alert('El numero ' + realN + ' es Dinner Club');
+		}else if(discover.test(realN) && realCVV.length === 3){
+			alert('El numero ' + realN + ' es Discover');
+		}else if(jcb.test(realN) && realCVV.length === 3){
+			alert('El numero ' + realN + ' es JCB');
 		}else {
-			alert('El numero ' +  numberIn + ' no es valido')
+			alert('El numero ' +  realN + ' no es valido')
 		}
 	}
 	var testingFunction = (e) => {
 		const numberIn = numberVal.value;
-		test1(numberIn);
+		const cvvNumber = verificationVal.value;
+		test1(numberIn, cvvNumber);
 	}
 	
 	testBtn.addEventListener('click', testingFunction);
