@@ -17,6 +17,8 @@ onload = (() => {
 	//Validar que la tarjeta no este vencida => Validar que el mes ingresado no haya acabado => comprobar si es el ultimo dia del mes.
 	//validar el numero de verificacion => validar el numer => validar el tipo de tarjeta => ver si el numero corresponde al tipo de tarjeta. ==== verificar si tiene numero de verificacion
 	
+	// CVV function validation
+	
 	let test1 = (numberIn, cvvNumber) => {
 		let realN = numberIn.replace(/\s/g,'');
 		let realCVV = cvvNumber.replace(/\s/g,'');
@@ -75,9 +77,7 @@ onload = (() => {
 		}
 	}
 	
-	var date = new Date();
-var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+	//Expiration date function
 	
 	let expirationDate = (inputDate) => {
 		let months = [
@@ -98,25 +98,26 @@ var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 		let day = actualDate.getDate();
 		let month = months[actualDate.getUTCMonth()];
 		let year = actualDate.getFullYear();
-		
-		let fullDate = year+month+day;
+		let fullDate = year+month;
 		let monthDay = year+month;
-		
 		let actualDateJoin = inputDate.split('-').join('');
-		console.log(inputDate);
-		
 		let lastDay = new Date(year,actualDate.getMonth() + 1,0);
 		let dayL = lastDay.getDate();
 		
-		console.log(dayL);
-		console.log(lastDay);
-		
-		if(actualDateJoin >= fullDate){
+		if(actualDateJoin > fullDate){
 			dateVal.className ='form-control form-control-lg success';
+		} else if (actualDateJoin === fullDate) {
+			if (day === dayL){
+				dateVal.className ='form-control form-control-lg error';
+			} else {
+				dateVal.className ='form-control form-control-lg success';
+			}
 		} else {
 			dateVal.className ='form-control form-control-lg error';
 		}
 	}
+	
+	//Testing: General function.
 	
 	let testingFunction = (e) => {
 		const numberIn = numberVal.value;
