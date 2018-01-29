@@ -10,7 +10,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	color:#fff;
+	color:#333;
 }
 ul {
 	list-style: none;
@@ -24,6 +24,7 @@ nav {
 	width: 100%;
 }
 header {
+	width: 100%;
 	width: 100%;
 }
 .nav-logo {
@@ -41,7 +42,6 @@ header {
 }
 .inline-b {
 	display: inline-block;
-	outline: 1px solid #000;
 }
 .right-nav {
 	float: right;
@@ -56,6 +56,17 @@ header {
 .options {
 	font-size: 30px;
 	margin-right: 2em;
+}
+.options:hover {
+	color: #333;
+	font-size: 35px;
+	transition-property: font-size;
+	transition-duration: 0.7s;
+}
+li:hover {
+	background-color: #FFDD00; 
+	color: #333;
+	border-right: 7px solid #333;
 }
 .hero-image {
 	width: 400px;
