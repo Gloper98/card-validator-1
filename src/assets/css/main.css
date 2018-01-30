@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto';
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+a:hover {
+	text-decoration: none;
+	color:#333;
+}
+ul {
+	list-style: none;
+	padding-left: none;
+	margin-left: none;
+	padding: 0;
+	height: 3em;
+}
+nav {
+	height: 5em;
+	width: 100%;
+}
+header {
+	width: 100%;
+	width: 100%;
+}
+.nav-logo {
+	width: 60px;
+	height: auto;
+	display: inline-block;
+}
+.principal-title {
+	font-size: 16px;
+	color: #fff;
+	font-weight: 600;
+}
+.nav-row {
+	background-color: #DD4142;
+}
+.inline-b {
+	display: inline-block;
+}
+.right-nav {
+	float: right;
+	margin-top: 2.3em;
+	padding: 0;
+	height: auto;
+}
+.aboutUs {
+	color: #3C4559;
+	margin-right: 4.5em;
+}
+.options {
+	font-size: 30px;
+	margin-right: 2em;
+}
+.options:hover {
+	color: #333;
+	font-size: 35px;
+	transition-property: font-size;
+	transition-duration: 0.7s;
+}
+li:hover {
+	background-color: #FFDD00; 
+	color: #333;
+	border-right: 7px solid #333;
+}
+.hero-image {
+	width: 400px;
+	height: auto;
+}
+.hero-row {
+  background-color: #FFDD00;
+	padding-bottom: 1em;
+}
+.title-hero {
+	font-size: 63px;
+}
+.buttons {
+	outline: 1px solid blue;
+	padding-top: 2em;
+}
+.cardOne {
+	outline: 1px solid black;
+}
+.anielBtn {
+  padding: 0.7em 4em;
+  }
+.buttons-c {
+	margin: 2em 3.5em;
+}
+footer {
+	background-color: #4D4D4D;
+	color: #fff;
+}
+.footer-info {
+	margin: 2em 2em;
+}
+.display-nav {
+	display: none;
+}
+/*=====================================*/
+@media (min-width: 830px){
+	.display-nav {
+		display: block;
+	}
+}
+@media (min-width: 1035px){
+	.anielBtn {
+  padding: 0.7em 4em;
+  }
+}
+@media (min-width: 1002px){
+	.anielBtn {
+		padding: 0.7em 2em;
+	}
+}
+@media (max-width: 1002px){
+	.image-doc{
+		display: none;
+	}
+}
