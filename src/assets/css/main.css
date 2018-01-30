@@ -6,11 +6,11 @@
 }
 a {
 	text-decoration: none;
-	color: #fff;
+	color: #333;
 }
 a:hover {
 	text-decoration: none;
-	color:#333;
+	color:#f2ddd2;
 }
 ul {
 	list-style: none;
@@ -59,15 +59,14 @@ header {
 	margin-right: 2em;
 }
 .options:hover {
-	color: #333;
-	font-size: 35px;
-	transition-property: font-size;
-	transition-duration: 0.7s;
+	color: #fff;
+	font-size: 32px;
+}
+ul {
 }
 li:hover {
-	background-color: #FFDD00; 
 	color: #333;
-	border-right: 7px solid #333;
+	border-bottom: 16px solid #efd14c;
 }
 .hero-image {
 	margin-top: 6em;
