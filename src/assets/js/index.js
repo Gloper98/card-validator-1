@@ -170,9 +170,10 @@ onload = (() => {
 		const numberIn = numberVal.value;
 		const cvvNumber = verificationVal.value;
 		const inputDate = dateVal.value;
-		//test1(numberIn, cvvNumber);
+		test1(numberIn, cvvNumber);
 		expirationDate(inputDate);
-		cvvValidation(cardType(numberIn), cvvNumber);
+		
+		//cvvValidation(cardType(numberIn), cvvNumber);
 	}
 	
 	testBtn.addEventListener('click', testingFunction);

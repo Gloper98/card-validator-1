@@ -58,15 +58,8 @@ header {
 	font-size: 30px;
 	margin-right: 2em;
 }
-.options:hover {
-	color: #fff;
-	font-size: 32px;
-}
-ul {
-}
 li:hover {
-	color: #333;
-	border-bottom: 16px solid #efd14c;
+	color:#f2ddd2;
 }
 .hero-image {
 	margin-top: 6em;
@@ -77,6 +70,10 @@ li:hover {
 	border-bottom-right-radius: 40%;
 	filter: grayscale(40%);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.active {
+	color: #fff;
+	border-bottom: 20px solid #efd14c;
 }
 .hero-row {
 	padding-bottom: 1em;
