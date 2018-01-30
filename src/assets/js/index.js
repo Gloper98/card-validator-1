@@ -17,6 +17,54 @@ onload = (() => {
 	//Validar que la tarjeta no este vencida => Validar que el mes ingresado no haya acabado => comprobar si es el ultimo dia del mes.
 	//validar el numero de verificacion => validar el numer => validar el tipo de tarjeta => ver si el numero corresponde al tipo de tarjeta. ==== verificar si tiene numero de verificacion
 	
+//Daniela: Number Validation Function
+const regExpNumbers = /^\d+$/;
+const regExpText = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
+
+let sentinelCardNumber = false;
+let sentinelName = false;
+let sentinelVerificationCode = false;
+let sentinelDueDate = false;
+	
+let isValidCardNumber = (cardNumber) => {
+  if (regExpNumbers.test(cardNumber) && cardNumber.length === 16) {
+    let cardNumbersUpsideDown = cardNumber.split('').reverse(); // array de numeros al revés
+    let counterOfEvenNumbers = 1; // contador de posiciones pares (impares en js)
+    let sum = 0; // almacenar la suma de los numeros de la tarjeta  
+    cardNumbersUpsideDown.forEach((number, index) => {
+      number = parseInt(number);
+      if (index === counterOfEvenNumbers) {
+        cardNumbersUpsideDown[index] *= 2; // multiplicar por 2 los numeros de las posiciones pares(impares en js)
+        if (cardNumbersUpsideDown[index] >= 10) {
+          cardNumbersUpsideDown[index] = cardNumbersUpsideDown[index].toString(); // convertir el numero en string
+          let separateNumbers = cardNumbersUpsideDown[index].split('');
+          separateNumbers[0] = parseInt(separateNumbers[0]);
+          separateNumbers[1] = parseInt(separateNumbers[1]);
+          cardNumbersUpsideDown[index] = separateNumbers[0] + separateNumbers[1]; // sumar las cifras
+        }
+        counterOfEvenNumbers += 2; // De lo contrario si la multiplicación es menor que 10 aumentar j en 2
+      }
+      sum += cardNumbersUpsideDown[index]; // suma de numeros en posiciones impares y nuevos numeros en posiciones pares
+    });
+			if(sum % 10 === 0){
+		alert('Muy bien');
+	} else {
+		alert('no cumple');
+	}
+    sum % 10 === 0 ? sentinelCardNumber = true : sentinelCardNumber = false;
+  } 
+	
+};
+
+let isValidName = (name) => {
+  if (regExpText.test(name) && name.length === 12) 
+    sentinelName = true;
+  else 
+    sentinelName = false;
+};
+	
+	
+	
 	//Type of card function
 	
 	let cardType = (numberIn) => {
@@ -170,8 +218,9 @@ onload = (() => {
 		const numberIn = numberVal.value;
 		const cvvNumber = verificationVal.value;
 		const inputDate = dateVal.value;
-		test1(numberIn, cvvNumber);
-		expirationDate(inputDate);
+		//test1(numberIn, cvvNumber);
+		//expirationDate(inputDate);
+		isValidCardNumber(numberIn);
 		
 		//cvvValidation(cardType(numberIn), cvvNumber);
 	}
