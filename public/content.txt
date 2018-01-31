@@ -1,0 +1,12 @@
+Format of use
+anielCard(name, cardNumber, cvv, date) 
+// response value : 'valid' or 'invalid'
+Characteristics
++ response value is of type string.
++ all parameters of the function anielCard must be complete. 
+otherwise the return value will be 'invalid'
+
+Example :
+
+formulario
+respuesta

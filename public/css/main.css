@@ -2,35 +2,10 @@
 	font-family: 'Roboto';
 }
 
-ul {
-	list-style: none;
-	padding-left: none;
-	margin-left: none;
-	padding: 0;
-	height: 3em;
-}
-nav {
-	height: 5em;
-	width: 100%;
-}
-header {
-	width: 100%;
-	width: 100%;
-}
-.nav-logo {
-	width: 60px;
-	height: auto;
-	display: inline-block;
-}
-.principal-title {
-	font-size: 16px;
-	color: #fff;
-	font-weight: 600;
-}
-.nav-row {
+header nav.navbar{
 	background-color: #DD4142;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .inline-b {
 	display: inline-block;
 }
@@ -49,25 +24,22 @@ header {
 	margin-right: 2em;
 }
 .options:hover {
-	color: #fff;
-	font-size: 32px;
-}
-
-li:hover {
 	color: #333;
-	border-bottom: 16px solid #efd14c;
+	font-size: 35px;
+	transition-property: font-size;
+	transition-duration: 0.7s;
+}
+li:hover {
+	background-color: #FFDD00; 
+	color: #333;
+	border-right: 7px solid #333;
 }
 .hero-image {
-	margin-top: 6em;
-	margin-bottom: 3em;
-	width: 300px;
-	height: 240px;
-	border-top-left-radius: 40%;
-	border-bottom-right-radius: 40%;
-	filter: grayscale(40%);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 400px;
+	height: auto;
 }
 .hero-row {
+  background-color: #FFDD00;
 	padding-bottom: 1em;
 }
 .title-hero {
@@ -80,13 +52,8 @@ li:hover {
 .cardOne {
 	outline: 1px solid black;
 }
-.anielBtn1 {
-  padding: 0.7em 4em;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
 .anielBtn {
   padding: 0.7em 4em;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 .buttons-c {
 	margin: 2em 3.5em;
