@@ -19,26 +19,26 @@ onload = (() => {
 	
 	//Type of card function
 	
-	let cardType = (numberIn) => {
-		let typeOfCard;
-		let realN = numberIn.replace(/\s/g,'');
-		if(visa.test(realN)){
-			typeOfCard='visa';
-		}else if(masterCard.test(realN)){
-			typeOfCard='mastercard';
-		}else if(amex.test(realN)){
-			typeOfCard='amex';
-		}else if(dinerClub.test(realN)){
-			typeOfCard='dclub';
-		}else if(discover.test(realN)){
-			typeOfCard='discover';
-		}else if(jcb.test(realN)){
-			typeOfCard='jcb';
-		}else {
-			typeOfCard='tipo de tarjeta no registrada';
-		}
-		return typeOfCard;
-	}
+	// let cardType = (numberIn) => {
+	// 	let typeOfCard;
+	// 	let realN = numberIn.replace(/\s/g,'');
+	// 	if(visa.test(realN)){
+	// 		typeOfCard='visa';
+	// 	}else if(masterCard.test(realN)){
+	// 		typeOfCard='mastercard';
+	// 	}else if(amex.test(realN)){
+	// 		typeOfCard='amex';
+	// 	}else if(dinerClub.test(realN)){
+	// 		typeOfCard='dclub';
+	// 	}else if(discover.test(realN)){
+	// 		typeOfCard='discover';
+	// 	}else if(jcb.test(realN)){
+	// 		typeOfCard='jcb';
+	// 	}else {
+	// 		typeOfCard='tipo de tarjeta no registrada';
+	// 	}
+	// 	return typeOfCard;
+	// }
 	
 	//Just CVV validation
 	let cvvValidation = (typeCard, cvvNumber) => {
