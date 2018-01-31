@@ -13,8 +13,8 @@ let isValidCardNumber = (cardNumber) => {
     let cardNumbersUpsideDown = cardNumber.split('').reverse(); // array de numeros al revés
     let counterOfEvenNumbers = 1; // contador de posiciones pares (impares en js)
     let sum = 0; // almacenar la suma de los numeros de la tarjeta  
-    cardNumbersUpsideDown.forEach((number, index) => {
-      number = parseInt(number);
+    cardNumbersUpsideDown.forEach((numb, index) => {
+      cardNumbersUpsideDown[index] = parseInt(numb);
       if (index === counterOfEvenNumbers) {
         cardNumbersUpsideDown[index] *= 2; // multiplicar por 2 los numeros de las posiciones pares(impares en js)
         if (cardNumbersUpsideDown[index] >= 10) {
@@ -114,11 +114,17 @@ let expirationDate = (month, year) => {
 
 // Testing: General function.
 
-let anielCard = (name, cardNumber, cvv, month, year) => {
-  isValidCardNumber(cardNumber.value);
-  isValidName(name.value);
-  cvvValidation(cardType(cardNumber.value), cvvNumber.value);
-  expirationDate(month.value, year.value);
+let anielCard = (name, cardNumber, cvv, month, year) => { debugger;
+  let valueName = document.getElementById(name.id).value;
+  let valueCardNumber = document.getElementById(cardNumber.id).value;
+  let valueCvv = document.getElementById(cvv.id).value;
+  let valueMonth = document.getElementById(month.id).value;
+  let valueYear = document.getElementById(year.id).value;
+
+  isValidCardNumber(valueCardNumber);
+  isValidName(valueName);
+  cvvValidation(cardType(valueCardNumber), valueCvv);
+  expirationDate(valueMonth, valueYear);
 
   // verificar que todos los inputs cumplan la condición
   if (sentinelCardNumber && sentinelDueDate && sentinelName && sentinelVerificationCode)
