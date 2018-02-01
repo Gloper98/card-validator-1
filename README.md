@@ -1,5 +1,5 @@
 # ![icon-document](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/icon-document.png "document") Card Validator
-![Card validation](public/assets/img/readme.gif "Card Validator")
+![Card validation](https://raw.githubusercontent.com/Danielalab/card-validator/master/assets/img/readme.gif "Card Validator")
 >Producto Final: Library to Card Validation(Web Page).
 
 La presente es una **libreria** para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).  
@@ -10,7 +10,7 @@ _This is a **library** for the validation of the number, expiration date, verifi
 
 ## Download
 
-![Card validation](https://github.com/Danielalab/card-validator/raw/master/public/assets/img/down.gif "Card Validator")
+![Card validation](https://raw.githubusercontent.com/Danielalab/card-validator/master/assets/img/down.gif "Card Validator")
 
 ## Using AnielCard.js
 
