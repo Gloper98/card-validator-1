@@ -114,7 +114,7 @@ let expirationDate = (month, year) => {
 
 // Testing: General function.
 
-let anielCard = (name, cardNumber, cvv, month, year) => { debugger;
+let anielCard = (name, cardNumber, cvv, month, year) => { 
   let valueName = document.getElementById(name.id).value;
   let valueCardNumber = document.getElementById(cardNumber.id).value;
   let valueCvv = document.getElementById(cvv.id).value;
