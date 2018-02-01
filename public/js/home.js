@@ -29,7 +29,7 @@ let begin = () => {
   };
 
   let testingLibrary = (event) => {
-    event.preventDefault(); debugger;
+    event.preventDefault(); 
     addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
     resetExample();
   };

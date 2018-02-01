@@ -1,8 +1,6 @@
 // función global de window
 let begin = () => {
-<<<<<<< HEAD
   window.location.href = 'public/home.html';
-=======
   // selecciona elementos del DOM
   let cardNumber = document.getElementById('card-number');
   let name = $('#name');
@@ -41,7 +39,6 @@ let begin = () => {
 
   // asocia eventos a elementos del DOM
   btnSubmit.on('click', testingLibrary);
->>>>>>> 14e2c2394af7329e67a94a4aa81ccf8fe4ce9234
 };
 
 window.onload = (begin);

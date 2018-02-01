@@ -1,5 +1,4 @@
 # ![icon-document](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/icon-document.png "document") Card Validator
-![Card-Validator](https://github.com/Gloper98/Cifrado-cesar-/raw/master/assets/images/decoder1.gif "cipher and decipher")
 >Producto Final: Library to Card Validation.
 
 La presente es una libreria para la validacion del numero, fecha de vencimiento, codigo de verificacion(cvv) y nombre completo correspondiente a la tarjeta de credito la cual hace uso del algoritmo de [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm).  
@@ -21,130 +20,22 @@ meteor add momentjs:moment  # meteor
 ## Using AnielCard.js
 
 ```diff
-var valid = require('card-validator');
+// declare variables that select the inputs 
+let name = document.getElementById('name')
 
-var numberValidation = valid.number('4111');
+let cardNumber = document.getElementById('card-number')
 
-if (!numberValidation.isPotentiallyValid) {
-  renderInvalidCardNumber();
-}
+let cvv = document.getElementById('cvv')
 
-if (numberValidation.card) {
-  console.log(numberValidation.card.type); // 'visa'
-}
+let month = document.getElementById('month')
+
+let year = document.getElementById('year')
+
+// call the function anielCard 
+// all parameters refer to an input (DOM)
+anielCard(name, cardNumber, cvv, month, year);
 
 ```
-
-## API
-<table>
-  <thead>
-    <tr>
-      <th colspan=1>Input</th>
-      <th colspan=3>Output</th>
-      <th colspan=2>Suggested Handling</th>
-    </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th>Value</th>
-      <th><code>card.type</code></th>
-      <th><code>isPotentiallyValid</code></th>
-      <th><code>isValid</code></th>
-      <th>Render Invalid UI</th>
-      <th>Allow Submit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>''</code></td>
-      <td><code>null</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'6'</code></td>
-      <td><code>null</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'60'</code></td>
-      <td><code>'discover'</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'601'</code></td>
-      <td><code>'discover'</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'6011'</code></td>
-      <td><code>'discover'</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'601'</code></td>
-      <td><code>'discover'</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'60'</code></td>
-      <td><code>'discover'</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'6'</code></td>
-      <td><code>null</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>''</code></td>
-      <td><code>null</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>'x'</code></td>
-      <td><code>null</code></td>
-      <td>false</td>
-      <td>false</td>
-      <td><strong>yes</strong></td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <td><code>''</code></td>
-      <td><code>null</code></td>
-      <td><strong>true</strong></td>
-      <td>false</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-  </tbody>
-</table>
 
 | Input                                                                                     | Output                        |
 |-------------------------------------------------------------------------------------------|-------------------------------|
@@ -152,21 +43,6 @@ if (numberValidation.card) {
 | `'10/2019'`<br/>`'10 / 2019'`<br />`'102019'`<br/>`'10 2019'`<br/>`'10 19'`               | `{month: '10', year: '2019'}` |
 | `{month: '01', year: '19'}`<br/>`{month: '1', year: '19'}`<br/>`{month: 1, year: 19}`     | `{month: '01', year: '19'}`   |
 | `{month: '10', year: '2019'}`<br/>`{month: '1', year: '2019'}`<br/>`{month: 1, year: 19}` | `{month: '10', year: '2019'}` |
-
-## Design decisions
-
-- The default maximum expiration year is 19 years from now.
-- `valid.expirationDate` will only return `month:` and `year:` as strings if the two are valid, otherwise they will be `null`.
-- Since non-US postal codes are alpha-numeric, the `postalCode` will allow non-number characters to be used in validation.
-
-## Development
-
-We use `nvm` for managing our node versions, but you do not have to. Replace any `nvm` references with the tool of your choice below.
-
-```sh
-nvm install
-npm install
-```
 
 ## Tools used
 
