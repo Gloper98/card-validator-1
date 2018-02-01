@@ -1,7 +1,7 @@
 let begin = () => {
   // selecciona elementos del DOM
   let cardNumber = document.getElementById('card-number');
-  let name = document.getElementById('name');
+  let name = $('#name');
   let cvv = document.getElementById('cvv');
   let month = document.getElementById('month');
   let year = document.getElementById('year');
@@ -30,8 +30,9 @@ let begin = () => {
 
   let testingLibrary = (event) => {
     event.preventDefault(); debugger;
-    addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
-    resetExample();
+    anielCard(name, cardNumber, cvv, month, year)
+    // addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
+    // resetExample();
   };
 
   // asocia eventos a elementos del DOM
