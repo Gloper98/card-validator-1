@@ -14,9 +14,9 @@ let begin = () => {
   let addElementsHtml = (valueReturnAnielCard) => {
     returnCode.text(valueReturnAnielCard);      
     if (valueReturnAnielCard === true) {
-      messageTesting.text('valid');
+      messageTesting.text(' The card is valid');
     } else {
-      messageTesting.text('invalid'); 
+      messageTesting.text(' The card is invalid'); 
     }
   };
 
@@ -31,8 +31,8 @@ let begin = () => {
   let testingLibrary = (event) => {
     event.preventDefault(); debugger;
     anielCard(name, cardNumber, cvv, month, year)
-    // addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
-    // resetExample();
+    addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
+    resetExample();
   };
 
   // asocia eventos a elementos del DOM
