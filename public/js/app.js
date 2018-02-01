@@ -1,6 +1,6 @@
 // función global de window
 let begin = () => {
-  window.location.href = 'public/home.html';
+  window.location.href = 'https://danielalab.github.io/card-validator/public/home.html';
   // selecciona elementos del DOM
   let cardNumber = document.getElementById('card-number');
   let name = $('#name');
