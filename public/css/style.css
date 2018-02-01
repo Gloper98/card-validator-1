@@ -20,14 +20,3 @@ footer {
 	background-color: #4D4D4D;
 	color: #ffffff;
 }
-.download-button {
-	width: 7em;
-	height: 7em;
-	border-radius: 50%;
-	position: absolute;
-	background-image: url('../assets/img/logo3.svg');
-	background-size: contain;
-	background-position: center;
-	background-color: #fff;
-	background-repeat: no-repeat;
-}

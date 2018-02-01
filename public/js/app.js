@@ -31,7 +31,7 @@ let begin = () => {
   };
 
   let testingLibrary = (event) => {
-    event.preventDefault(); debugger;
+    event.preventDefault(); 
     anielCard(name, cardNumber, cvv, month, year)
     addElementsHtml(anielCard(name, cardNumber, cvv, month, year));
     resetExample();
