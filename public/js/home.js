@@ -7,15 +7,27 @@ let begin = () => {
   let year = document.getElementById('year');
   let btnSubmit = $('#btn-submit');
   let messageTesting = $('#message');
-  let returnCode = $('#return');
+  let card = $('#card');
+  let number = $('#number');
+  let code = $('#code');
+  let expiration = $('#expiration');
+  let validName = $('#valid-name');
 
   // declarar funciones 
-  let addElementsHtml = (valueReturnAnielCard) => {
-    returnCode.text(valueReturnAnielCard);      
+  let addObjectValuesToHTML = (valueReturnAnielCard) => {
+    card.text(valueReturnAnielCard['card valid']);
+    number.text(valueReturnAnielCard['card number']);
+    code.text(valueReturnAnielCard['cvv']);
+    expiration.text(valueReturnAnielCard['expiration']);
+    validName.text(valueReturnAnielCard['name']);
+  }
+
+  let addElementsHtml = (valueReturnAnielCard) => {   
+    addObjectValuesToHTML(valueReturnAnielCard);    
     if (valueReturnAnielCard['card valid'] === true) {
-      messageTesting.text('valid');
+      messageTesting.text('The card is valid');
     } else {
-      messageTesting.text('invalid'); 
+      messageTesting.text('The card is invalid'); 
     }
   };
 

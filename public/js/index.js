@@ -7,10 +7,10 @@ let sentinelVerificationCode = false;
 let sentinelDueDate = false;
 let allInputsValid = {
   'card valid' : false,
-  'card number' : sentinelCardNumber,
-  'cvv' : sentinelVerificationCode,
-  'expiration' : sentinelDueDate,
-  'name' : sentinelName,
+  'card number' : false,
+  'cvv' : false,
+  'expiration' : false,
+  'name' : false,
 };
 
 // card number Validation
@@ -118,6 +118,13 @@ let expirationDate = (month, year) => {
   }
 };
 
+let modifyReturnObject = () => {
+  allInputsValid['card number'] = sentinelCardNumber;
+  allInputsValid['cvv'] = sentinelVerificationCode;
+  allInputsValid['expiration'] = sentinelDueDate;
+  allInputsValid['name'] = sentinelName;
+};
+
 // Testing: General function.
 
 let anielCard = (name, cardNumber, cvv, month, year) => { 
@@ -128,7 +135,7 @@ let anielCard = (name, cardNumber, cvv, month, year) => {
   let valueYear = year.value;
 
   isValidCardNumber(valueCardNumber);
-  isValidName(valueName);
+  isValidName(valueName); 
   cvvValidation(cardType(valueCardNumber), valueCvv);
   expirationDate(valueMonth, valueYear);
 
@@ -139,5 +146,6 @@ let anielCard = (name, cardNumber, cvv, month, year) => {
   else {
     allInputsValid['card valid'] = false;
   }
+  modifyReturnObject();
   return allInputsValid;
 };
