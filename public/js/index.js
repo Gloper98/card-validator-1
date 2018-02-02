@@ -7,10 +7,10 @@ let sentinelVerificationCode = false;
 let sentinelDueDate = false;
 let allInputsValid = {
   'card valid' : false,
-  'card number' : sentinelCardNumber,
-  'cvv' : sentinelVerificationCode,
-  'expiration' : sentinelDueDate,
-  'name' : sentinelName,
+  'card number' : false,
+  'cvv' : false,
+  'expiration' : false,
+  'name' : false,
 };
 
 // card number Validation
@@ -42,7 +42,7 @@ let isValidCardNumber = (cardNumber) => {
 
 // Name Validation
 let isValidName = (name) => {
-  if (regExpText.test(name) && name.length >= 14 && name.length <= 18)
+  if (regExpText.test(name) && name.length >= 6 && name.length <= 20)
     sentinelName = true;
   else
     sentinelName = false;
@@ -118,6 +118,26 @@ let expirationDate = (month, year) => {
   }
 };
 
+let modifyReturnObject = () => {
+  allInputsValid['card number'] = sentinelCardNumber;
+  allInputsValid['cvv'] = sentinelVerificationCode;
+  allInputsValid['expiration'] = sentinelDueDate;
+  allInputsValid['name'] = sentinelName;
+};
+
+let addClassHtml = (newClass, oldClass, name, cardNumber, cvv, month, year) => {
+  name.classList.add(newClass);
+  cardNumber.classList.add(newClass);
+  cvv.classList.add(newClass);
+  month.classList.add(newClass);
+  year.classList.add(newClass);
+  name.classList.remove(oldClass);
+  cardNumber.classList.remove(oldClass);
+  cvv.classList.remove(oldClass);
+  month.classList.remove(oldClass);
+  year.classList.remove(oldClass);   
+}
+
 // Testing: General function.
 
 let anielCard = (name, cardNumber, cvv, month, year) => { 
@@ -128,16 +148,19 @@ let anielCard = (name, cardNumber, cvv, month, year) => {
   let valueYear = year.value;
 
   isValidCardNumber(valueCardNumber);
-  isValidName(valueName);
+  isValidName(valueName); 
   cvvValidation(cardType(valueCardNumber), valueCvv);
   expirationDate(valueMonth, valueYear);
 
   // verificar que todos los inputs cumplan la condición
   if (sentinelCardNumber && sentinelDueDate && sentinelName && sentinelVerificationCode) {
     allInputsValid['card valid'] = true;
+    addClassHtml('success', 'error', name, cardNumber, cvv, month, year);
   }
   else {
     allInputsValid['card valid'] = false;
+    addClassHtml = ('error', 'success', name, cardNumber, cvv, month, year)
   }
+  modifyReturnObject();
   return allInputsValid;
 };
