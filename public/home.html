@@ -56,12 +56,11 @@
         <div class="col-10 col-sm-4 my-2">
           <h4>Characteristics</h4>
           <ul>
-            <li>All parameters of the function anielCard must be complete.</li>
+            <li>All the arguments of the anielCard function must be complete.</li>
             <li>Response value is of type
-                <b>Boolean</b> .</li>
-            <li>Otherwise the return value will be TRUE or FALSE</li>
-            <li>If return TRUE card is VALID</li>
-            <li>If return FALSE card is INVALID</li>
+                <b>Object</b> .</li>
+            <li>It is recommended that each of the inputs have a unique 'id' .</li>
+            <li>For now it is only accepted that the inputs sent as arguments have been selected with 'Vanilla Js'.</li>
           </ul>
         </div>
         <div class="col-10 col-sm-4 my-2 bg-code">
@@ -73,7 +72,7 @@
           <p class="code">let month = document.getElementById('month')</p>
           <p class="code">let year = document.getElementById('year')</p>
           <code>// call the function anielCard
-            <br>// all parameters refer to an input (DOM)</code>
+            <br>// all arguments must refer to an input (DOM)</code>
           <p class="code"> anielCard(name, cardNumber, cvv, month, year);</p>
         </code>
         </div>
