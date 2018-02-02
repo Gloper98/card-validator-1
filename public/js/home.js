@@ -8,12 +8,11 @@ let begin = () => {
   let btnSubmit = $('#btn-submit');
   let messageTesting = $('#message');
   let returnCode = $('#return');
-  console.log(name);
 
   // declarar funciones 
   let addElementsHtml = (valueReturnAnielCard) => {
     returnCode.text(valueReturnAnielCard);      
-    if (valueReturnAnielCard === true) {
+    if (valueReturnAnielCard['card valid'] === true) {
       messageTesting.text('valid');
     } else {
       messageTesting.text('invalid'); 
