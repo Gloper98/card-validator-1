@@ -7,7 +7,6 @@ let begin = () => {
   let year = document.getElementById('year');
   let btnSubmit = $('#btn-submit');
   let messageTesting = $('#message');
-<<<<<<< HEAD
   let returnCode = $('#return');
 	let changeLang = $('#language');
 	
@@ -17,13 +16,11 @@ let begin = () => {
     $('[lang="en"]').toggle();
   });
 
-=======
   let card = $('#card');
   let number = $('#number');
   let code = $('#code');
   let expiration = $('#expiration');
   let validName = $('#valid-name');
->>>>>>> 4fec2eb0cd20ff439d3aaab1afae1e4febcc0581
 
   // declarar funciones 
   let addObjectValuesToHTML = (valueReturnAnielCard) => {
