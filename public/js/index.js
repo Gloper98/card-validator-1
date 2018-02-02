@@ -133,7 +133,7 @@ let anielCard = (name, cardNumber, cvv, month, year) => {
   expirationDate(valueMonth, valueYear);
 
   // verificar que todos los inputs cumplan la condición
-  if (sentinelCardNumber() && sentinelDueDate() && sentinelName() && sentinelVerificationCode()) {
+  if (sentinelCardNumber && sentinelDueDate && sentinelName && sentinelVerificationCode) {
     allInputsValid['card valid'] = true;
   }
   else {
