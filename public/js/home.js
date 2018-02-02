@@ -8,6 +8,14 @@ let begin = () => {
   let btnSubmit = $('#btn-submit');
   let messageTesting = $('#message');
   let returnCode = $('#return');
+	let changeLang = $('#language');
+	
+	$('[lang="es"]').hide();
+	changeLang.click(function() {
+		$('[lang="es"]').toggle();
+    $('[lang="en"]').toggle();
+  });
+
 
   // declarar funciones 
   let addElementsHtml = (valueReturnAnielCard) => {

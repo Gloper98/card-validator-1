@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" lang="en" href="#">Home
+              <span lang="" class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link hide" lang="es" href="#">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -34,7 +37,16 @@
             <a class="nav-link" href="https://github.com/Danielalab/card-validator">Github</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://raw.github.com/Danielalab/card-validator/master/public/js/index.js" download="AnielCard.js">Download</a>
+            <a class="nav-link" lang="en" href="https://raw.github.com/Danielalab/card-validator/master/public/js/index.js" download="AnielCard.js">Download</a>
+            <a class="nav-link hide" lang="es" href="https://raw.github.com/Danielalab/card-validator/master/public/js/index.js" download="AnielCard.js">Descargar</a>
+          </li>
+          <li id="language" class="nav-item">
+            <a class="nav-link" lang="en" href="#">Spanish(Español)
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" lang="es" href="#">Ingles(English)
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -43,7 +55,8 @@
       <div class="row align-items-center height" id="container-main">
         <div class="text-center col-12 col-sm-12">
           <h1 class="title-hero">AnielCard.js</h1>
-          <h3 class="solang-hero">Parse, validate, manipulate, and display card numbers and dates in JavaScript.</h3>
+          <h3 class="solang-hero" lang="en">Parse, validate, manipulate, and display card numbers and dates in JavaScript.</h3>
+          <h3 class="solang-hero hide" lang="es">Analice, valide, manipule y muestre números de tarjetas y fechas en JavaScript.</h3>
         </div>
       </div>
     </div>
@@ -51,29 +64,41 @@
 
   <section>
     <div class="container-fluid">
-      <h3 class="text-center my-2 py-2">Format of use</h3>
+      <h3 class="text-center my-2 py-2 show" lang="en">Format of use</h3>
+      <h3 class="text-center my-2 py-2 hide" lang="es">Formato de uso</h3>
       <div class="row justify-content-center">
         <div class="col-10 col-sm-4 my-2">
-          <h4>Characteristics</h4>
+          <h4 class="show" lang="en">Characteristics</h4>
+          <h4 class="hide" lang="es" class="">Caracteristicas</h4>
           <ul>
-            <li>All parameters of the function anielCard must be complete.</li>
-            <li>Response value is of type
-                <b>Boolean</b> .</li>
-            <li>Otherwise the return value will be TRUE or FALSE</li>
-            <li>If return TRUE card is VALID</li>
-            <li>If return FALSE card is INVALID</li>
+            <li class="show" lang="en">All parameters of the function anielCard must be complete.</li>
+            <li class="hide" lang="es">Todos los parametros de la funcion anielCard deben estar completos.</li>
+            <li class="show" lang="en">Response value is of type
+                <b lang="en">Boolean</b> .</li>
+            <li class="hide" lang="es">El valor de respuesta es de tipo
+                <b lang="es">Boleano</b> .</li>
+            <li class="show" lang="en">Otherwise the return value will be TRUE or FALSE</li>
+            <li class="hide" lang="es">De lo contrario, el valor de retorno será VERDADERO o FALSO</li>
+            <li class="show" lang="en">If return TRUE card is VALID</li>
+            <li class="hide" lang="es">Si retorna VERDADERO, la tarjeta es valida</li>
+            <li class="show" lang="en">If return FALSE card is INVALID</li>
+            <li class="hide" lang="es">Si retorna FALSO la tarjeta es invalida</li>
           </ul>
         </div>
         <div class="col-10 col-sm-4 my-2 bg-code">
-          <code>// declare variables that select the inputs
+          <code><span lang="en" class="show">// declare variables that select the inputs</span>
+          <span lang="es" class="hide">// declare variables que sean equivalentes al input</span>
           <br>
           <p class="code">let name = document.getElementById('name')</p>
           <p class="code">let cardNumber = document.getElementById('card-number')</p>
           <p class="code">let cvv = document.getElementById('cvv')</p>
           <p class="code">let month = document.getElementById('month')</p>
           <p class="code">let year = document.getElementById('year')</p>
-          <code>// call the function anielCard
-            <br>// all parameters refer to an input (DOM)</code>
+          <code><span lang="en" class="show">// call the function anielCard</span>
+          <span lang="es" class="hide">// Llame la funcion anielCard</span>
+            <br><span lang="en" class="show">// all parameters refer to an input (DOM)</span>
+            <span lang="es" class="hide">// todos los parámetros se refieren a una entrada (DOM)</span>
+            </code>
           <p class="code"> anielCard(name, cardNumber, cvv, month, year);</p>
         </code>
         </div>
@@ -83,36 +108,45 @@
   <section>
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <h3 class="text-center my-2 py-2">Example</h3>
+        <h3 lang="en" class="text-center my-2 py-2">Example</h3>
+        <h3 lang="es" class="text-center my-2 py-2 hide">Ejemplo</h3>
       </div>
       <div class="row justify-content-center my-3">
         <form class="col-12 col-sm-7">
           <div class="form-row justify-content-center">
             <div class="form-group col-sm-4">
-              <label for="card-number">Card Number</label>
-              <input type="text" class="form-control" id="card-number" placeholder="card number">
+              <label class="show" lang="en" for="card-number">Card Number</label>
+              <label class="hide" lang="es" for="card-number">Numero de tarjeta</label>
+              <input type="text" lang="en" class="form-control" id="card-number" placeholder="card number">
+              <input type="text" lang="es" class="form-control" id="card-number" placeholder="numero de tarjeta">
             </div>
             <div class="form-group col-sm-2">
               <label for="cvv">CVV</label>
+              <label class="hide" for="cvv">CVV</label>
               <input type="text" class="form-control" id="cvv">
             </div>
             <div class="form-group col-sm-1">
-              <label for="month">Month</label>
+              <label class="show" lang="en" for="month">Month</label>
+              <label class="hide" lang="es" class="hide" for="month">Mes</label>
               <input type="text" class="form-control" id="month">
             </div>
             <div class="form-group col-sm-2">
-              <label for="year">Year</label>
+              <label class="show" lang="en" for="year">Year</label>
+              <label lang="es" class="hide" for="year">Año</label>
               <input type="text" class="form-control" id="year">
             </div>
           </div>
           <div class="form-row justify-content-center">
             <div class="form-group col-sm-9">
-              <label for="name">Name of Card</label>
-              <input type="text" class="form-control" id="name" placeholder="name of Card">
+              <label class="show" lang="en" for="name">Name of Card</label>
+              <label lang="es" class="hide" for="name">Nombre de la tarjeta</label>
+              <input type="text" lang="en" class="form-control" id="name" placeholder="name of Card">
+              <input type="text" lang="es" class="form-control" id="name" placeholder="nombre de tarjeta">
             </div>
           </div>
           <div class="form-row justify-content-center">
-            <button type="submit" class="btn btn-success" id="btn-submit">Submit</button>                      
+            <button lang="en" type="submit" class="btn btn-success show" id="btn-submit">Submit</button>                      
+            <button lang="es" type="submit" class="btn btn-success hide" id="btn-submit">Enviar</button>                      
           </div>
           <div class="form-row justify-content-center my-3 py-2">
             <p><span id="message"> ... </span>
@@ -121,7 +155,8 @@
         </form>
         <div class="col-sm-3 my-3 py-3 bg-code">
           <code>
-            <span>// value de return</span> <br>
+            <span lang="en" class="show">// value de return</span>
+            <span lang="es" class="hide">// valor de retorno</span> <br>
             <span id="return"></span>
           </code>
         </div>
@@ -132,7 +167,8 @@
     <div class="container-fluid">
       <div class="row  align-items-center">
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-          <p class="pt-3">&copy; AnielCard.js is freely distributable under the terms of the MIT license.</p>
+          <p lang="en" class="pt-3 show">&copy; AnielCard.js is freely distributable under the terms of the MIT license.</p>
+          <p lang="es" class="pt-3 hide">&copy; AnielCard.js es libremente distribuible bajo los términos de la licencia de MIT.</p>
         </div>
       </div>
     </div>
