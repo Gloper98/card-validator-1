@@ -5,7 +5,13 @@ let sentinelCardNumber = false;
 let sentinelName = false;
 let sentinelVerificationCode = false;
 let sentinelDueDate = false;
-let allInputsValid = false;
+let allInputsValid = {
+  'card valid' : false,
+  'card number' : sentinelCardNumber,
+  'cvv' : sentinelVerificationCode,
+  'expiration' : sentinelDueDate,
+  'name' : sentinelName,
+};
 
 // card number Validation
 let isValidCardNumber = (cardNumber) => {
@@ -115,11 +121,11 @@ let expirationDate = (month, year) => {
 // Testing: General function.
 
 let anielCard = (name, cardNumber, cvv, month, year) => { 
-  let valueName = document.getElementById(name.id).value;
-  let valueCardNumber = document.getElementById(cardNumber.id).value;
-  let valueCvv = document.getElementById(cvv.id).value;
-  let valueMonth = document.getElementById(month.id).value;
-  let valueYear = document.getElementById(year.id).value;
+  let valueName = name.value;
+  let valueCardNumber = cardNumber.value;
+  let valueCvv = cvv.value;
+  let valueMonth = month.value;
+  let valueYear = year.value;
 
   isValidCardNumber(valueCardNumber);
   isValidName(valueName);
@@ -127,8 +133,11 @@ let anielCard = (name, cardNumber, cvv, month, year) => {
   expirationDate(valueMonth, valueYear);
 
   // verificar que todos los inputs cumplan la condición
-  if (sentinelCardNumber() && sentinelDueDate() && sentinelName() && sentinelVerificationCode())
-    return allInputsValid = true;
-  else
-    return allInputsValid = false;
+  if (sentinelCardNumber && sentinelDueDate && sentinelName && sentinelVerificationCode) {
+    allInputsValid['card valid'] = true;
+  }
+  else {
+    allInputsValid['card valid'] = false;
+  }
+  return allInputsValid;
 };
