@@ -85,8 +85,8 @@
             <li class="hide" lang="es">Si retorna FALSO la tarjeta es invalida</li>
             <li  lang="en">It is recommended that each of the inputs have a unique 'id' .</li>
             <li  lang="es">Se recomienda que cada uno de los inputs tenga un unico 'id'</li>
-            <li  lang="es">For now it is only accepted that the inputs sent as arguments have been selected with 'Vanilla Js'.</li>
-            <li  lang="en">Por ahora solo se acepta que los inputs mandados como argumentos hayan sido seleccionados con 'Vanilla Js'</li>
+            <li  lang="en">For now it is only accepted that the inputs sent as arguments have been selected with 'Vanilla Js'.</li>
+            <li  lang="es">Por ahora solo se acepta que los inputs mandados como argumentos hayan sido seleccionados con 'Vanilla Js'</li>
           </ul>
         </div>
         <div class="col-10 col-sm-4 my-2 bg-code">
@@ -126,7 +126,6 @@
             </div>
             <div class="form-group col-sm-2">
               <label for="cvv">CVV</label>
-              <label class="hide" for="cvv">CVV</label>
               <input type="text" class="form-control" id="cvv">
             </div>
             <div class="form-group col-sm-1">
@@ -159,16 +158,33 @@
         </form>
         <div class="col-sm-3 my-3 py-3 bg-code">
           <code>
-            <span lang="en" class="show">// value de return</span>
+            <span lang="en" class="show">// return value</span>
             <span lang="es" class="hide">// valor de retorno</span> <br>
             <span id="return"></span>
-            <span>// value de return</span> <br>
             <span>{</span> <br>
-            <span>  'card valid'  : <span id="card">true / false</span>,</span><br>
-            <span>  'card number' : <span id="number">true / false</span>,</span><br>
-            <span>  'cvv' : <span id="code">true / false</span>,</span><br>
-            <span>  'expiration' : <span id="expiration">true / false</span>,</span><br>
-            <span>  'name': <span id="valid-name">true / false</span></span><br>
+						<span>  'card valid'  : {</span><br>
+            <span>     'valid' : <span id="card">true / false</span></span><br>
+            <span>  },</span><br>
+            <span>  'card number' : {</span><br>
+            <span>     'valid' : <span id="number-b">true / false</span>,</span><br>
+            <span>     'value' : <span id="number">undefined</span></span><br>
+            <span>  },</span>
+            <span>  'cvv' : {</span><br>
+            <span>     'valid' : <span id="code-b">true / false</span>,</span><br>
+            <span>     'value' : <span id="code">undefined</span></span><br>
+            <span>  },</span>
+            <span>  'expiration' : {</span><br>
+            <span>     'valid' : <span id="expiration-b">true / false</span>,</span><br>
+            <span>     'value' : <span id="expiration">undefined</span></span><br>
+            <span>  },</span>
+            <span>  'type': {</span><br>
+            <span>     'valid' : <span id="valid-type-b">true / false</span>,</span><br>
+            <span>     'value' : <span id="valid-type">undefined</span></span><br>
+            <span>  },</span>
+            <span>  'name': {</span><br>
+            <span>     'valid' : <span id="valid-name-b">true / false</span>,</span><br>
+            <span>     'value' : <span id="valid-name">undefined</span></span><br>
+            <span>  },</span><br>
             <span>}</span>            
           </code>
         </div>

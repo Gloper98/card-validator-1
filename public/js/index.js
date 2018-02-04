@@ -1,22 +1,51 @@
 const regExpNumbers = /^\d+$/;
 const regExpText = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
+const visa = /^4[0-9]{6,}$/;
+const masterCard = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/;
+const amex = /^3[47][0-9]{5,}$/;
+const dinerClub = /^3(?:0[0-5]|[68][0-9])[0-9]{4,}$/;
 
+let numberObject;
+let cvvObject;
+let expirationObject;
+let typeObject;
+let nameObject;
+let typeOfCard;
 let sentinelCardNumber = false;
 let sentinelName = false;
 let sentinelVerificationCode = false;
 let sentinelDueDate = false;
 let allInputsValid = {
-  'card valid' : false,
-  'card number' : false,
-  'cvv' : false,
-  'expiration' : false,
-  'name' : false,
+  'card valid' : {
+		'valid' : false,
+	 },
+  'card number' : {
+		'valid' : false,
+		'value' : undefined
+	 },
+  'cvv' : {
+		'valid' : false,
+		'value' : undefined
+	 },
+  'expiration' : {
+		'valid' : false,
+		'value' : undefined
+	 },
+	'type' : {
+		'valid' : false,
+		'value' : undefined
+	 },
+  'name' : {
+		'valid' : false,
+		'value' : undefined
+	 }
 };
 
 // card number Validation
 let isValidCardNumber = (cardNumber) => {
-  if (regExpNumbers.test(cardNumber) && cardNumber.length === 16) {
-    let cardNumbersUpsideDown = cardNumber.split('').reverse(); // array de numeros al revés
+	let withoutBlankSpaces = cardNumber.replace(/\s/g, '');
+  if (regExpNumbers.test(withoutBlankSpaces) && ((withoutBlankSpaces.length === 16 && (visa.test(withoutBlankSpaces) || master.test(withoutBlankSpace))) || (withoutBlankSpaces.length === 15 && amex.test(withoutBlankSpaces)) )) {
+    let cardNumbersUpsideDown = withoutBlankSpaces.split('').reverse(); // array de numeros al revés
     let counterOfEvenNumbers = 1; // contador de posiciones pares (impares en js)
     let sum = 0; // almacenar la suma de los numeros de la tarjeta  
     cardNumbersUpsideDown.forEach((numb, index) => {
@@ -35,23 +64,26 @@ let isValidCardNumber = (cardNumber) => {
       sum += cardNumbersUpsideDown[index]; // suma de numeros en posiciones impares y nuevos numeros en posiciones pares
     });
     sum % 10 === 0 ? sentinelCardNumber = true : sentinelCardNumber = false;
-  } else
+		numberObject = cardNumber.replace(/\s/g, '');
+  } else {
+		numberObject = cardNumber.replace(/\s/g, '');
     sentinelCardNumber = false;
-  return sentinelCardNumber;
+	}
 };
 
 // Name Validation
 let isValidName = (name) => {
-  if (regExpText.test(name) && name.length >= 6 && name.length <= 20)
+  if (regExpText.test(name) && name.split(' ').length === 2){
+		nameObject = name;
     sentinelName = true;
-  else
+	} else
     sentinelName = false;
+	  nameObject = name;
 };
 
 // CVV validation
 let cvvValidation = (typeCard, cvvNumber) => {
   let realCVV = cvvNumber.replace(/\s/g, '');
-  let validationNumber;
   if (regExpNumbers.test(realCVV)) {
     if (realCVV.length === 3) {
       if (typeCard === 'visa' || typeCard === 'mastercard' || typeCard === 'discover' || typeCard === 'dclub' || typeCard === 'jcb') {
@@ -69,25 +101,26 @@ let cvvValidation = (typeCard, cvvNumber) => {
   } else {
     sentinelVerificationCode = false;
   }
+	cvvObject = realCVV;
 };
 
 let cardType = (numberIn) => {
-  let typeOfCard;
-  const visa = /^4[0-9]{6,}$/;
-  const masterCard = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/;
-  const amex = /^3[47][0-9]{5,}$/;
-  const dinerClub = /^3(?:0[0-5]|[68][0-9])[0-9]{4,}$/;
   let realN = numberIn.replace(/\s/g, '');
   if (visa.test(realN)) {
     typeOfCard = 'visa';
+		typeObject = true
   } else if (masterCard.test(realN)) {
     typeOfCard = 'mastercard';
+		typeObject = true
   } else if (amex.test(realN)) {
     typeOfCard = 'amex';
+		typeObject = true
   } else if (dinerClub.test(realN)) {
     typeOfCard = 'dclub';
+		typeObject = true
   } else {
     typeOfCard = 'tipo de tarjeta no registrada';
+		typeObject = false
   }
   return typeOfCard;
 };
@@ -116,13 +149,20 @@ let expirationDate = (month, year) => {
   } else {
     sentinelDueDate = false;
   }
+   expirationObject = actualDateJoin;
 };
 
 let modifyReturnObject = () => {
-  allInputsValid['card number'] = sentinelCardNumber;
-  allInputsValid['cvv'] = sentinelVerificationCode;
-  allInputsValid['expiration'] = sentinelDueDate;
-  allInputsValid['name'] = sentinelName;
+  allInputsValid['card number']['valid'] = sentinelCardNumber;
+  allInputsValid['card number']['value'] = numberObject;
+  allInputsValid['cvv']['valid'] = sentinelVerificationCode;
+  allInputsValid['cvv']['value'] = cvvObject;
+  allInputsValid['expiration']['valid'] = sentinelDueDate;
+  allInputsValid['expiration']['value'] = expirationObject;
+  allInputsValid['name']['valid'] = sentinelName;
+  allInputsValid['name']['value'] = nameObject;
+  allInputsValid['type']['valid'] = typeObject;
+  allInputsValid['type']['value'] = typeOfCard;
 };
 
 let addClassHtml = (newClass, oldClass, name, cardNumber, cvv, month, year) => {
@@ -138,29 +178,41 @@ let addClassHtml = (newClass, oldClass, name, cardNumber, cvv, month, year) => {
   year.classList.remove(oldClass);   
 }
 
+let probando = (validationFunction, inputToValidate) => {
+	if(validationFunction){
+		inputToValidate.classList.add('success');
+		inputToValidate.classList.remove('error');
+	} else {
+		inputToValidate.classList.add('error');
+		inputToValidate.classList.remove('success');
+	}
+}
+
 // Testing: General function.
 
 let anielCard = (name, cardNumber, cvv, month, year) => { 
   let valueName = name.value;
-  let valueCardNumber = cardNumber.value;
+  let valueCardNumber = cardNumber.value.replace(/\s/g, '');
   let valueCvv = cvv.value;
   let valueMonth = month.value;
   let valueYear = year.value;
-
+  
+	cardType(valueCardNumber);
   isValidCardNumber(valueCardNumber);
   isValidName(valueName); 
-  cvvValidation(cardType(valueCardNumber), valueCvv);
+  cvvValidation(typeOfCard, valueCvv);
   expirationDate(valueMonth, valueYear);
 
   // verificar que todos los inputs cumplan la condición
   if (sentinelCardNumber && sentinelDueDate && sentinelName && sentinelVerificationCode) {
-    allInputsValid['card valid'] = true;
-    addClassHtml('success', 'error', name, cardNumber, cvv, month, year);
+    allInputsValid['card valid']['valid'] = true;
   }
   else {
-    allInputsValid['card valid'] = false;
-    addClassHtml = ('error', 'success', name, cardNumber, cvv, month, year)
+    allInputsValid['card valid']['valid'] = false;
   }
+	console.log(allInputsValid);
   modifyReturnObject();
   return allInputsValid;
+	
 };
+

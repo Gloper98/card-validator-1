@@ -17,23 +17,36 @@ let begin = () => {
   });
 
   let card = $('#card');
+  let cardB = $('#card-b');
   let number = $('#number');
+  let numberB = $('#number-b');
   let code = $('#code');
+  let codeB = $('#code-b');
   let expiration = $('#expiration');
+  let expirationB = $('#expiration-b');
   let validName = $('#valid-name');
+  let validNameB = $('#valid-name-b');
+	let validType = $('#valid-type');
+  let validTypeB = $('#valid-type-b');
 
   // declarar funciones 
   let addObjectValuesToHTML = (valueReturnAnielCard) => {
-    card.text(valueReturnAnielCard['card valid']);
-    number.text(valueReturnAnielCard['card number']);
-    code.text(valueReturnAnielCard['cvv']);
-    expiration.text(valueReturnAnielCard['expiration']);
-    validName.text(valueReturnAnielCard['name']);
+    card.text(valueReturnAnielCard['card valid']['valid']);
+    numberB.text(valueReturnAnielCard['card number']['valid']);
+    number.text(valueReturnAnielCard['card number']['value']);
+    codeB.text(valueReturnAnielCard['cvv']['valid']);
+    code.text(valueReturnAnielCard['cvv']['value']);
+    expirationB.text(valueReturnAnielCard['expiration']['valid']);
+    expiration.text(valueReturnAnielCard['expiration']['value']);
+    validNameB.text(valueReturnAnielCard['name']['valid']);
+    validName.text(valueReturnAnielCard['name']['value']);
+		validTypeB.text(valueReturnAnielCard['type']['valid']);
+    validType.text(valueReturnAnielCard['type']['value']);
   }
 
   let addElementsHtml = (valueReturnAnielCard) => {   
     addObjectValuesToHTML(valueReturnAnielCard);    
-    if (valueReturnAnielCard['card valid'] === true) {
+    if (valueReturnAnielCard['card valid']['valid'] === true) {
       messageTesting.text('The card is valid');
     } else {
       messageTesting.text('The card is invalid'); 
